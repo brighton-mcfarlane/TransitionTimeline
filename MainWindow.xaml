@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TransitionTimeline"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="615" Width="799" ResizeMode="NoResize">
+    <Window.Resources>
+
+
+    </Window.Resources>
     <Grid>
-        
+        <Grid HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="792">
+            <Label Background="#FFF0F0F0" Content="Branch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="20" HorizontalAlignment="Left" Height="35" Width="116" FontSize="14"/>
+            <Label Background="#FFF0F0F0" Content="Timeline" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="20" Height="31" Width="116" FontSize="14"/>
+            <Label Background="#FFF0F0F0" Content="Name" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Margin="20" Height="31" Width="116" FontSize="14"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="51" Margin="10,80,0,0" VerticalAlignment="Top" Width="772">
+            <Button Background="White" Name="PastDueButton" Content="Past Due" Margin="0,0,330,0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="75" Click="PastDueButton_Click"/>
+            <Button Name="CurrentButton" Content="Current" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="75" Click="CurrentButton_Click" Background="White"/>
+            <Button Name="UpcomingButton" Content="Upcoming" Margin="330,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="UpcomingButton_Click" Background="White"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center" Height="19" Margin="10,131,10,0" VerticalAlignment="Top" Width="772"/>
+        <StackPanel HorizontalAlignment="Left" Height="404" Margin="10,155,0,0" VerticalAlignment="Top" Width="133">
+            <Label Content="General Timeline" HorizontalAlignment="Center" FontWeight="Bold"/>
+        </StackPanel>
+        <Label Content="Resources:" VerticalAlignment="Top" FontWeight="Bold" Margin="365,407,0,0" HorizontalAlignment="Left"/>
+        <ListBox  Height="126" Margin="160,433,160,0" VerticalAlignment="Top" HorizontalContentAlignment="Center">
+
+        </ListBox>
+        <StackPanel HorizontalAlignment="Left" Height="265" Margin="649,155,0,0" VerticalAlignment="Top" Width="133">
+            <Label Content="Individual Tasks" HorizontalAlignment="Center" FontWeight="Bold"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="134" Margin="649,425,0,0" VerticalAlignment="Top" Width="133">
+            <Label Content="References" HorizontalAlignment="Center" FontWeight="Bold"/>
+        </StackPanel>
+        <ListView HorizontalAlignment="Left" Height="252" Margin="160,155,0,0" VerticalAlignment="Top" Width="472">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </Window>
