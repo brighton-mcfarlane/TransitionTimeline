@@ -15,10 +15,6 @@
             <TextBlock Text="Username" FontFamily="MS Reference Sans Serif" FontSize="18"/>
         </Label>
         <TextBox MinWidth="150" MinHeight="25" Name="UsernameBox" Margin="396,172,246,81.911"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="25" Background="WhiteSmoke"/>
-        <Label MinHeight="32" MinWidth="101" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="274,218,424,28.911" VerticalAlignment="Center">
-            <TextBlock Text="Password" FontFamily="MS Reference Sans Serif" FontSize="18"/>
-        </Label>
-        <PasswordBox Background="WhiteSmoke" MinWidth="150" MinHeight="25" Name="PasswordBox" Margin="396,222,246,31.911"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="25"/>
         <Label MinHeight="32" MinWidth="101" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="270,276,420,111" VerticalAlignment="Center" Grid.RowSpan="2">
             <TextBlock Text="Branch" FontFamily="MS Reference Sans Serif" FontSize="18"/>
         </Label>

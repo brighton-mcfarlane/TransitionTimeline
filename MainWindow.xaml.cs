@@ -21,18 +21,23 @@ namespace TransitionTimeline
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Dictionary<string, User> users = new Dictionary<string, User>();
+        public string currentUser;
         public MainWindow()
         {
             InitializeComponent();
             LogonPage userLogon = new LogonPage();
             userLogon.ShowDialog();
+            BranchOfService.DataContext = users[currentUser];
         }
 
         private void GetUserInfo(LogonPage user)
         {
             string username = user.UsernameBox.Text;
-            string password = user.PasswordBox.Password;
             string branchofservice = user.BranchSelect.SelectedItem.ToString();
+            User newUser = new User(username, branchofservice);
+            users.Add(username, newUser);
+            currentUser = username;
         }
 
         private void PastDueButton_Click(object sender, RoutedEventArgs e)

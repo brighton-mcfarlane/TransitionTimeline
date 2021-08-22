@@ -34,13 +34,16 @@ namespace TransitionTimeline
     public class User
     {
         private string _username { get; set; }
-        private string _password { get; set; }
         private string _branchofservice { get; set; }
 
-        public User(string userName, string passWord, string bos)
+        public User()
+        {
+
+        }
+
+        public User(string userName, string bos)
         {
             _username = userName;
-            _password = passWord;
             _branchofservice = bos;
         }
     }
