@@ -17,7 +17,7 @@
             <RowDefinition Height="87*"/>
         </Grid.RowDefinitions>
         <Grid HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="792">
-            <Label Background="#FFF0F0F0" Content="Branch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="20" HorizontalAlignment="Left" Height="35" Width="116" FontSize="14"/>
+            <Label Background="#FFF0F0F0" Content="{Binding users._branchofservice}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="20" HorizontalAlignment="Left" Height="35" Width="116" FontSize="14"/>
             <Label Background="#FFF0F0F0" Content="Timeline" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="20" Height="31" Width="116" FontSize="14"/>
             <Label Background="#FFF0F0F0" Content="Name" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Margin="20" Height="31" Width="116" FontSize="14"/>
         </Grid>

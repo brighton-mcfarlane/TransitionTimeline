@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using TransitionTimeline.Properties;
+using System.Collections.ObjectModel;
 namespace TransitionTimeline
 {
     /// <summary>
@@ -23,7 +24,15 @@ namespace TransitionTimeline
         public MainWindow()
         {
             InitializeComponent();
-            
+            LogonPage userLogon = new LogonPage();
+            userLogon.ShowDialog();
+        }
+
+        private void GetUserInfo(LogonPage user)
+        {
+            string username = user.UsernameBox.Text;
+            string password = user.PasswordBox.Password;
+            string branchofservice = user.BranchSelect.SelectedItem.ToString();
         }
 
         private void PastDueButton_Click(object sender, RoutedEventArgs e)
