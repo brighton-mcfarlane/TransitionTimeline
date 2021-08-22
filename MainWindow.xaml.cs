@@ -37,17 +37,24 @@ namespace TransitionTimeline
 
         private void PastDueButton_Click(object sender, RoutedEventArgs e)
         {
-            PastDueButton.Background = Brushes.DarkGray;
+            if (PastDueButton.Background == Brushes.Transparent)
+            {
+                PastDueButton.Background = Brushes.LightSteelBlue;
+
+            }else if (PastDueButton.Background == Brushes.LightSteelBlue)
+            {
+                PastDueButton.Background = Brushes.Transparent;
+            }
         }
 
         private void CurrentButton_Click(object sender, RoutedEventArgs e)
         {
-
+            PastDueButton.Background = Brushes.LightSteelBlue;
         }
 
         private void UpcomingButton_Click(object sender, RoutedEventArgs e)
         {
-
+            PastDueButton.Background = Brushes.LightSteelBlue;
         }
     }
 }
