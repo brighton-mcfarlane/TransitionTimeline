@@ -23,6 +23,22 @@ namespace TransitionTimeline
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void PastDueButton_Click(object sender, RoutedEventArgs e)
+        {
+            PastDueButton.Background = Brushes.DarkGray;
+        }
+
+        private void CurrentButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpcomingButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
