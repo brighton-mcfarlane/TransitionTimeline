@@ -47,5 +47,10 @@ namespace TransitionTimeline
         {
             PastDueButton.Background = Brushes.LightSteelBlue;
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

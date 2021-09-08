@@ -110,6 +110,7 @@
         <Grid HorizontalAlignment="Center" Height="19" Margin="10,131,11,0" VerticalAlignment="Top" Width="772"/>
         <StackPanel HorizontalAlignment="Left" Height="404" Margin="10,150,0,0" VerticalAlignment="Top" Width="133" Grid.RowSpan="3">
             <Label Content="General Timeline" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <ComboBox SelectionChanged="ComboBox_SelectionChanged" Text="24-12 Months"/>
         </StackPanel>
         <Label Content="Resources:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,407,359,0" HorizontalAlignment="Right" Width="69"/>
         <ListBox  Height="126" Margin="160,433,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Grid.RowSpan="3" HorizontalAlignment="Left" Width="473"/>
