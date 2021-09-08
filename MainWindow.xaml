@@ -8,21 +8,37 @@
         Title="MainWindow" Height="615" Width="799" ResizeMode="NoResize">
 
     <Window.Resources>
-        <Color x:Key="BorderLightColor"> LightSteelBlue</Color>
-        <Color x:Key="BorderMediumColor"> SteelBlue</Color>
-        <Color x:Key="BorderDarkColor"> DarkBlue</Color>
+        
+        <Color x:Key="BorderLightColor"> white</Color>
+        <Color x:Key="BorderMediumColor"> Gray</Color>
+        <Color x:Key="BorderDarkColor"> Black</Color>
 
         <Color x:Key="HoverLightColor"> LightSeaGreen</Color>
         <Color x:Key="HoverMediumColor"> SeaGreen</Color>
         <Color x:Key="HoverDarkColor"> DarkGreen</Color>
 
-        <Color x:Key="ControlLightColor">White</Color>
-        <Color x:Key="ControlMediumColor">#FF7381F9</Color>
-        <Color x:Key="ControlDarkColor">#FF211AA9</Color>
+        <Color x:Key="ControlLightColor">WhiteSmoke</Color>
+        <Color x:Key="ControlMediumColor"> LightSeaGreen</Color>
+        <Color x:Key="ControlDarkColor"> DarkSeaGreen</Color>
+
+        <Style x:Key="ButtonFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border>
+                            <Rectangle Margin="2"
+                                       StrokeThickness="1"
+                                       Stroke="#60000000"
+                                       StrokeDashArray="1 2" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
         <Style TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
-            <Setter Property="Height" Value="20"/>
+            <Setter Property="Height" Value="30"/>
             <Setter Property="Width" Value ="75"/>
             <Setter Property ="Template">
                 <Setter.Value>
@@ -47,13 +63,7 @@
                             </LinearGradientBrush>
                         </Border.BorderBrush>
                             <Border.Background>
-                                <LinearGradientBrush EndPoint="0.5,1"
-                                                     StartPoint="0.5,0">
-                                    <GradientStop Color="{DynamicResource ControlLightColor}"
-                                                  Offset="0" />
-                                    <GradientStop Color="{DynamicResource ControlMediumColor}"
-                                                  Offset="1" />
-                                </LinearGradientBrush>
+                                <SolidColorBrush Color="SeaGreen" Opacity="0.2"></SolidColorBrush>
                             </Border.Background>
                             <ContentPresenter Margin="2"
                                               HorizontalAlignment="Center"
@@ -63,9 +73,12 @@
                         
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value ="True">
-                                <Setter TargetName="Border" Property="BorderBrush" Value="LightSteelBlue"
-                                />
-                                <Setter TargetName="Border" Property="BorderThickness" Value="2"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value= "SeaGreen"/>
+                                <Setter TargetName="Border" Property="BorderThickness" Value="3"/>
+                                <Setter TargetName="Border" Property="Background" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="SeaGreen"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -86,17 +99,18 @@
             <Label Name="Username" Background="#FFF0F0F0" Content="{Binding username}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Margin="20" Height="31" Width="116" FontSize="14"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="51" Margin="10,80,0,0" VerticalAlignment="Top" Width="772">
-            <Button Name="CurrentButton" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="75" Click="CurrentButton_Click">
+            <Button Name="CurrentButton" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="75" Click="CurrentButton_Click" FontWeight="Bold" FontFamily="Century Gothic">
                 <TextBlock Text="Current" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Button>
-            <Button x:Name="PastDueButton" Margin="0,0,330,0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="75" Click="PastDueButton_Click">
+            <Button x:Name="PastDueButton" Margin="0,0,330,0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="75" Click="PastDueButton_Click" FontWeight="Bold" FontFamily="Century Gothic">
                 <TextBlock Text="Past Due" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Button>
-            <Button Name="UpcomingButton" Content="Upcoming" Margin="330,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="UpcomingButton_Click"/>
+            <Button Name="UpcomingButton" Content="Upcoming" Margin="330,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="UpcomingButton_Click" FontWeight="Bold" FontFamily="Century Gothic"/>
         </Grid>
         <Grid HorizontalAlignment="Center" Height="19" Margin="10,131,11,0" VerticalAlignment="Top" Width="772"/>
         <StackPanel HorizontalAlignment="Left" Height="404" Margin="10,150,0,0" VerticalAlignment="Top" Width="133" Grid.RowSpan="3">
             <Label Content="General Timeline" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <ComboBox SelectionChanged="ComboBox_SelectionChanged" Text="24-12 Months"/>
         </StackPanel>
         <Label Content="Resources:" VerticalAlignment="Top" FontWeight="Bold" Margin="0,407,359,0" HorizontalAlignment="Right" Width="69"/>
         <ListBox  Height="126" Margin="160,433,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Grid.RowSpan="3" HorizontalAlignment="Left" Width="473"/>
